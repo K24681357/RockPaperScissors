@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rock Paper Scissors</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer>
+            /* computer play - a random number is found (0-2), each number links to either Rock, Paper or Scissors, the resulting item is displayed on the screen*/
+
+            function computerPlay(){
+                var randomNumber = Math.floor((Math.random()*3));
+              
+                if (randomNumber <1){
+                    result = "rock";
+                }
+                else if(randomNumber > 1){
+                    result = "scissors"
+                }else if(randomNumber ==1 ) {
+                    result = "paper"
+                 }
+                 console.log(result);
+                return result;
+                
+            }
+            
+            /* player selection */
+            function playerSelection(){
+
+                    var response = prompt("Enter your choice: (rock, paper or scissors)");
+                    return response;
+            }   
+
+playerSelection();
+
+            function playRound(player, computer){
+  
+  if(player == rock){
+    switch (computer) {
+      case rock:
+        console.log("tie");
+        break;
+      case scissors:
+        console.log("player wins");
+        break;
+      case paper:
+        console.log("computer wins");
+        break;
+    }
+    
+    
+  }else if(player == paper){
+    switch (computer) {
+      case rock:
+        console.log("player wins");
+        break;
+      case scissors:
+        console.log("computer wins");
+        break;
+      case paper:
+        console.log("tie");
+        break;
+    }
+    
+  }else if(player == scissors){
+    switch (computer) {
+      case rock:
+        console.log("computer wins");
+        break;
+      case scissors:
+        console.log("tie");
+        break;
+      case paper:
+        console.log("paper wins");
+        break;
+    }
+    
+    
+  }
+}
+
+playRound(playerSelection(), computerPlay());
+
+    
+    
+
+            
+        </script>
+    </body>
+</html>
